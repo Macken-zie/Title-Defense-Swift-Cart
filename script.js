@@ -47,7 +47,7 @@ function startBarcodeScanner() {
             type: "LiveStream", 
             target: "#barcode-scanner", 
             constraints: { 
-                facingMode: "user", // Change to "user" for horizontal orientation
+                facingMode: "environment",
                 width: { ideal: 400, max: 640 },
                 height: { ideal: 480, max: 720 }
             }} ,
