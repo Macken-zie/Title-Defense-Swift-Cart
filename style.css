@@ -1,0 +1,371 @@
+body {
+    font-family: 'Lemon Milk', sans-serif;
+    background-color: #f5f1e6;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    color: #009bff; /* Added font color */
+}
+
+.container {
+    width: 100%;
+    max-width: 450px;
+    height: 100vh;
+    background: #fff;
+    padding: 1px;
+    border-radius: 12px;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    color: #009bff; /* Added font color */
+}
+
+.logo {
+    width: 208px;
+    height: 43px;
+    text-align: center;
+    color: #009bff; /* Updated font color */
+    font-size: 32px;
+    font-family: Koulen;
+    font-weight: 400;
+    letter-spacing: 0.96px;
+    word-wrap: break-word;
+}
+
+h2{
+    margin-top: 100px;
+    color: #009bff; /* Added font color */
+}
+
+.start-logo {
+    padding-top: 240px;
+    width: 350px;
+    height: 280px;
+}
+
+.swift-logo {
+    width: 150px;
+    height: 150px;
+    text-align: center;
+    color: #009bff; /* Added font color */
+}
+
+.tab-content {
+    display: none;
+    flex-grow: 1;
+    width: 100%;
+    overflow-y: auto; /* Add this line to enable vertical scrolling */
+    overflow-x: hidden; /* Add this line to disable horizontal scrolling */
+    overflow: hidden;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding-bottom: 5px;
+    color: #009bff; /* Added font color */
+}
+
+#start.active + .bottom-nav {
+    display: none;
+}
+
+.tab-content.active { display: flex; }
+
+.bottom-button {
+    width: 100%;
+    max-width: 375px;
+    background: #fff;
+    display: flex;
+    justify-content: center;
+    padding: 10px 0;
+    border-bottom: 10px solid #ddd;
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    color: #009bff; /* Added font color */
+}
+
+button {
+    background: black;
+    color: #009bff; /* Updated font color */
+    border: none;
+    padding: 20px;
+    border-radius: 8px;
+    cursor: pointer;
+    width: 80%;
+    font-size: 20px;
+    font-weight: bold;
+    margin-top: 10px;
+}
+
+button:hover { background: #333; }
+
+.cart-items {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    padding: 10px;
+    color: #009bff; /* Added font color */
+}
+
+.cart-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: #ffffff;
+    border-radius: 12px;
+    padding: 12px 16px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    font-size: 16px;
+    max-height: 80vh; /* Add this line to set a maximum height for the cart items */
+    overflow-y: auto; /* Add this line to enable vertical scrolling */
+    overflow-x: hidden; /* Add this line to disable horizontal scrolling */
+    color: #009bff; /* Added font color */
+}
+
+.cart-item .barcode {
+    font-weight: bold;
+    color: #009bff; /* Updated font color */
+}
+
+.cart-item .price {
+    font-size: 18px;
+    font-weight: bold;
+    color: #009bff; /* Updated font color */
+}
+
+.total-price {
+    margin-top: 20px;
+    font-size: 20px;
+    font-weight: bold;
+    text-align: center;
+    color: #009bff; /* Added font color */
+}
+
+.popup {
+    border-radius: 20px;
+    position: center;
+    margin-bottom: 100px;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 1000px;
+    margin-top: 1px;
+    background-color: rgba(0, 0, 0, 0);
+    display: none;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+    color: #009bff; /* Added font color */
+}
+
+.popup-content {
+    background-color: transparent; /* Change to transparent */
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: none; /* Remove box shadow */
+    text-align: center;
+    height: 100px;
+    max-width: 3000px;
+    width: 100%;
+    color: #009bff; /* Added font color */
+}
+
+.cart-bubble {
+    background-color: #fff;
+    padding: 1px;
+    border-radius: 12px;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+    max-width: 400px;
+    align-items: center;
+    position: relative;
+    z-index: 1;
+    color: #009bff; /* Added font color */
+}
+
+.cart-bubble::before {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 0;
+    height: 0;
+    border-style: solid;
+    border-width: 20px 20px 20px 20px;
+    border-color: transparent transparent #fff transparent;
+    z-index: -1;
+}
+
+#qrCodeContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #009bff; /* Added font color */
+}
+
+.square-button {
+    width: 200px;
+    height: 200px;
+    background-color: black;
+    color: #009bff; /* Updated font color */
+    border: none;
+    cursor: pointer;
+    font-size: 24px;
+    font-weight: bold;
+    margin-top: 20px;
+}
+
+.square-button:hover {
+    background-color: #333;
+}
+
+.notification {
+    position: absolute;
+    margin-bottom: 60px;
+    bottom: 0;
+    left: 50%;
+    transform: translate(-50%, 0);
+    background-color: rgba(0, 0, 0, 0.5);
+    color: #009bff; /* Updated font color */
+    padding: 10px;
+    border-radius: 10px;
+    z-index: 1000;
+}
+
+#scan-again-button{
+    margin-bottom: 100px;
+    color: #009bff; /* Added font color */
+}
+
+#barcode-scanner-container {
+    position: absolute;
+    
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background-color: #fff;
+    z-index: 1000;
+    color: #009bff; /* Added font color */
+}
+
+#barcode-scanner {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    color: #009bff; /* Added font color */
+}
+
+.decrement-button, .increment-button {
+    width: 20px;
+    height: 20px;
+    cursor: pointer;
+    color: #009bff; /* Added font color */
+}
+
+.decrement-button:hover, .increment-button:hover {
+    opacity: 0.8;
+}
+
+.quantity-modifier {
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100px;
+    color: #009bff; /* Added font color */
+}
+
+.quantity-modifier img{
+    justify-content: space-between;
+    align-items: center;
+    width: 20px;
+    height: 20px;
+    cursor: pointer;
+    color: #009bff; /* Added font color */
+}
+
+.delete-button {
+    width: 20px;
+    height: 20px;
+    cursor: pointer;
+    color: #009bff; /* Added font color */
+}
+
+.delete-button:hover {
+    opacity: 0.8;
+}
+
+button {
+    background-color: #F2EFE7; /* Changed background color to #F2EFE7 */
+    color: #009bff; /* Updated font color */
+    border: none;
+    padding: 20px;
+    border-radius: 8px;
+    cursor: pointer;
+    width: 80%;
+    font-size: 20px;
+    font-weight: bold;
+    margin-top: 10px;
+}
+
+.square-button {
+    background-color: #F2EFE7; /* Changed background color to #F2EFE7 */
+    color: #009bff; /* Updated font color */
+    border: none;
+    cursor: pointer;
+    font-size: 24px;
+    font-weight: bold;
+    margin-top: 20px;
+}
+
+.bottom-button {
+    border-radius: 20px;
+    background-color: #F2EFE7; /* Changed background color to #F2EFE7 */
+    display: flex;
+    justify-content: center;
+    padding: 8px;
+    border-bottom: 1px solid #ddd;
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    color: #009bff; /* Updated font color */
+}
+
+#proceed-button {
+    background-color: #F2EFE7; /* Changed background color to #F2EFE7 */
+    color: #009bff; /* Updated font color */
+    border: none;
+    margin-bottom: 10px;
+    border-radius: 8px;
+    cursor: pointer;
+    width: 80%;
+    font-weight: bold;
+}
+
+#checkout-button {
+    background-color: #F2EFE7; /* Changed background color to #F2EFE7 */
+    color: #009bff; /* Updated font color */
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    width: 80%;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+#cartimg{
+    width: 40px;
+    height: 40px;
+}

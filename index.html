@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SwiftCart</title>
+    <link href="https://fonts.googleapis.com/css2?family=Lemon+Milk:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.jsdelivr.net/npm/@zxing/browser@latest"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.js"></script>
+    <script src="https://unpkg.com/quagga@0.12.1/dist/quagga.js"></script>
+</head>
+<body>
+    <div class="container">
+        <div class="logo" id="welcome">Welcome!</div>
+        <img src="./assets/SwiftLogo.png" alt="Logo" class="logo start-logo" id="logo">
+        <img src="./assets/Logo-name.png" alt="Logo-name" class="swift-logo" style="display: none;" id="logo-name">
+        <div class="tab-content active" id="start"><button onclick="hideWelcome(); hideLogo(); navigateTo('intermediate')">Start Shopping</button></div>
+        <div class="tab-content" id="intermediate">
+            <h2>Scan a Product</h2>
+            <button class="square-button" onclick="navigateTo('scan')">Scan</button>
+        </div>
+        <div class="tab-content" id="scan">
+            <h2>Scan a Barcode</h2>
+            <div id="barcode-scanner"></div>
+            <div class="bottom-button">
+                <button id="proceed-button" style="display: none;" onclick="proceedToCart()">Proceed to Cart</button>
+            </div>
+        </div>
+        <div class="tab-content" id="cart">
+            <h2>Your Cart</h2>
+            <div class="cart-bubble">
+                <table border="1" width="100%" style="border-collapse: collapse; border-radius: 12px; overflow: hidden;">
+                    <thead>
+                        <tr style="background-color: #f1f1f1; border-radius: 12px;">
+                            <th style="padding: 6px; text-align: center; font-weight: bold;">Product</th>
+                            <th style="padding: 20px; text-align: center; font-weight: bold;">Quantity</th>
+                            <th style="padding: 6px; text-align: center; font-weight: bold;">Weight</th>
+                            <th style="padding: 6px; text-align: center; font-weight: bold;">Price</th>
+                        </tr>
+                    </thead>    
+                    <tbody id="cartTable" style="border-radius: 12px;">
+                    </tbody>
+                </table>
+            </div>
+            <p id="totalWeight" style="margin-top: 10px; font-size: 20px; font-weight: bold; text-align: center;">Total Weight: 0g</p>
+            <p id="totalPrice" style="margin-top: 10px; font-size: 20px; font-weight: bold; text-align: center;">Total: ₱0.00</p>
+            <button id="scan-again-button" onclick="navigateTo('scan')">Scan Again</button>
+            <div class="bottom-button">
+                <button id="checkout-button" onclick="checkout()">Proceed to Checkout</button>
+            </div>
+        </div>
+        <div class="tab-content" id="checkout">
+            <h2>Checkout QR Code</h2>
+            <div id="qrCodeContainer"></div>
+            <p style="margin-top: 10px; font-size: 16px; color: #333;">Ready to be scanned at the cashier. Please proceed.</p>
+            <div class="bottom-button">
+                <button onclick="navigateTo('cart')"><img id="cartimg" src="./assets/cart.png" alt="Cart"></button>
+                <button id="cart" onclick="closeQRPopup()"><img id="cartimg" src="./assets/close.png" alt="Close"></button>
+            </div>
+        </div>
+        <div class="popup" id="popup">
+            <div class="popup-content">
+                <h2>Quantity</h2>
+                <div class="quantity-modifier"   style="display: flex; justify-content: center; align-items: center; margin: 0 auto;">
+                    <img src="./assets/minus.png" onclick="decrementQuantityPopup()" style="width: 20px; height: 20px; cursor: pointer;">
+                    <input type="number" id="quantity" value="1" readonly style="width: 50px; height: 30px; text-align: center; border: none; border-radius: 5px; padding: 5px; margin: 0 auto;">
+                    <img src="./assets/plus.png" onclick="incrementQuantityPopup()" style="width: 20px; height: 20px; cursor: pointer;">
+                </div>
+                <button onclick="addQuantity()">Add</button>
+                <button onclick="cancelQuantity()">Cancel</button>
+            </div>
+        </div>
+    </div>
+    <script src="./script.js"></script>
+</body>
+</html>
