@@ -3,7 +3,7 @@ let lastScannedTime = 0; // Store last scan timestamp
 let currentBarcode = '';
 
 const productMap = {
-    '1431431431436': { name: 'I Love You Aquisha', price: ∞, weight: ∞ }, // weight in grams
+    '1431431431436': { name: 'Belo', price: 600, weight: 100 }, // weight in grams
     '4806518335346': { name: 'Belo', price: 600, weight: 100 }, // weight in grams
     '4800010075069': { name: 'Cream O', price: 10, weight: 50 }, // weight in grams
     '4800016644801': { name: 'Piattos', price: 25, weight: 45 }, // weight in grams
