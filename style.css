@@ -104,8 +104,6 @@ button {
     margin-top: 10px;
 }
 
-button:hover { background: #333; }
-
 .cart-items {
     display: flex;
     flex-direction: column;
@@ -222,10 +220,6 @@ button:hover { background: #333; }
     margin-top: 20px;
 }
 
-.square-button:hover {
-    background-color: #333;
-}
-
 .notification {
     position: absolute;
     margin-bottom: 60px;
@@ -273,10 +267,6 @@ button:hover { background: #333; }
     color: #009bff; /* Added font color */
 }
 
-.decrement-button:hover, .increment-button:hover {
-    opacity: 0.8;
-}
-
 .quantity-modifier {
 
     display: flex;
@@ -300,10 +290,6 @@ button:hover { background: #333; }
     height: 20px;
     cursor: pointer;
     color: #009bff; /* Added font color */
-}
-
-.delete-button:hover {
-    opacity: 0.8;
 }
 
 button {
