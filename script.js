@@ -47,7 +47,7 @@ function startBarcodeScanner() {
             type: "LiveStream", 
             target: "#barcode-scanner", 
             constraints: { 
-                facingMode: ["environment", "user"], // Try to use back camera, fallback to front camera
+                facingMode: ["environment"], // Use back camera
                 width: { ideal: 400, max: 640 },
                 height: { ideal: 480, max: 720 }
             }} ,
@@ -64,6 +64,7 @@ function startBarcodeScanner() {
         }
         Quagga.start();
     });
+
     // On barcode detected
     Quagga.onDetected(function(result) {
         const barcode = result.codeResult.code;
