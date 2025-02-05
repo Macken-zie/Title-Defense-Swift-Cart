@@ -3,9 +3,9 @@ let lastScannedTime = 0; // Store last scan timestamp
 let currentBarcode = '';
 
 const productMap = {
-    '1431431431436': { name: 'I LOVE YOU AQUISHA', price: ∞, weight: ∞ }, // weight in grams
-    '4806518335346': { name: 'Belo', price: 600, weight: 100 }, // weight in grams
-    '4800010075069': { name: 'Cream O', price: 10, weight: 50 }, // weight in grams
+    '1431431431436': { name: 'I LOVE YOU AQUISHA', price: 143, weight: 143 }, // weight in grams
+    '4806518335346': { name: 'Belo', price: 600, weight: 50 }, // weight in grams
+    '4800010075069': { name: 'Cream O', price: 10, weight: 30 }, // weight in grams
     '4800016644801': { name: 'Piattos', price: 25, weight: 45 }, // weight in grams
     '4806028510158': { name: 'Weslysy Gummy Burger', price: 20, weight: 15 }, // weight in grams
     '4800016603280': { name: 'Vcut Onion Garlic', price: 25, weight: 25 }, // weight in grams
